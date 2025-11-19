@@ -1,0 +1,19 @@
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/stringio-3.1.7/ext/stringio
+/Users/johnny/.rvm/rubies/ruby-3.3.0/bin/ruby extconf.rb
+checking for rb_io_mode_t in ruby/io.h... no
+creating Makefile
+
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20251003-2095-u43hkc sitelibdir\=./.gem.20251003-2095-u43hkc clean
+
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20251003-2095-u43hkc sitelibdir\=./.gem.20251003-2095-u43hkc
+compiling stringio.c
+linking shared-object stringio.bundle
+
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20251003-2095-u43hkc sitelibdir\=./.gem.20251003-2095-u43hkc install
+/usr/local/bin/ginstall -c -m 0755 stringio.bundle ./.gem.20251003-2095-u43hkc
+
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20251003-2095-u43hkc sitelibdir\=./.gem.20251003-2095-u43hkc clean

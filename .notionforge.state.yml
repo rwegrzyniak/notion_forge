@@ -1,0 +1,81 @@
+---
+resources:
+  page_philosophical_workshop:
+    id: 28151ddc-6ac0-819c-915a-d6a81f0a41d7
+    metadata:
+      :name: Philosophical Workshop
+      :created_at: '2025-10-03T19:46:23+02:00'
+      :type: page
+  database_conclusions_theses:
+    id: 28151ddc-6ac0-81d8-addd-e1fb14eea507
+    metadata:
+      :name: Conclusions & Theses
+      :created_at: '2025-10-04T01:31:19+02:00'
+      :type: database
+  page_dashboard:
+    id: 28151ddc-6ac0-81d2-a1dd-fd9db9b57ea3
+    metadata:
+      :name: Dashboard
+      :created_at: '2025-10-04T01:31:20+02:00'
+      :type: page
+  page_workflow_guide:
+    id: 28151ddc-6ac0-8195-be82-eb3eef415538
+    metadata:
+      :name: Workflow Guide
+      :created_at: '2025-10-04T01:31:21+02:00'
+      :type: page
+  page_style_guide:
+    id: 28151ddc-6ac0-812b-8eb7-e6f54dca9dc1
+    metadata:
+      :name: Style Guide
+      :created_at: '2025-10-04T01:31:22+02:00'
+      :type: page
+  page_drift_test_workspace:
+    id: 28251ddc-6ac0-8174-874f-d45332b500dd
+    metadata:
+      :name: Drift Test Workspace
+      :created_at: '2025-10-04T19:43:04+02:00'
+      :type: page
+  database_test_database:
+    id: 28251ddc-6ac0-8114-9c50-eb311be704c3
+    metadata:
+      :name: Test Database
+      :created_at: '2025-10-04T19:46:59+02:00'
+      :type: database
+  page_test_page:
+    id: 28251ddc-6ac0-81b7-828b-fa98044b96cd
+    metadata:
+      :name: Test Page
+      :created_at: '2025-10-04T19:47:01+02:00'
+      :type: page
+  template__template_thesis:
+    id: 28751ddc-6ac0-81ef-b482-f3db3574d980
+    metadata:
+      :name: "[TEMPLATE] Thesis"
+      :created_at: '2025-10-09T10:42:31+02:00'
+      :type: template
+  database_publications:
+    id: 28751ddc-6ac0-81ef-a1f0-ed51428a32f6
+    metadata:
+      :name: Publications
+      :created_at: '2025-10-09T10:42:33+02:00'
+      :type: database
+  template__template_polemic:
+    id: 28751ddc-6ac0-8137-8a46-e95536c04af9
+    metadata:
+      :name: "[TEMPLATE] Polemic"
+      :created_at: '2025-10-09T10:42:36+02:00'
+      :type: template
+  database_sources_references:
+    id: 28751ddc-6ac0-817b-bbef-d5ad1f511ed9
+    metadata:
+      :name: Sources & References
+      :created_at: '2025-10-09T10:42:38+02:00'
+      :type: database
+  template__template_source:
+    id: 28751ddc-6ac0-810c-9fcb-fe0daccffc4d
+    metadata:
+      :name: "[TEMPLATE] Source"
+      :created_at: '2025-10-09T10:42:40+02:00'
+      :type: template
+version: 0.1.0

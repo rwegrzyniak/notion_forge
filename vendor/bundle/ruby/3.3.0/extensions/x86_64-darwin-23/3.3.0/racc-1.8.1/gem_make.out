@@ -1,0 +1,18 @@
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/johnny/.rvm/rubies/ruby-3.3.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251003-2095-4v7mds sitelibdir\=./.gem.20251003-2095-4v7mds clean
+
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251003-2095-4v7mds sitelibdir\=./.gem.20251003-2095-4v7mds
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251003-2095-4v7mds sitelibdir\=./.gem.20251003-2095-4v7mds install
+/usr/local/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20251003-2095-4v7mds/racc
+
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251003-2095-4v7mds sitelibdir\=./.gem.20251003-2095-4v7mds clean

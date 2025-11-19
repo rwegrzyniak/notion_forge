@@ -1,0 +1,19 @@
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/erb-5.0.2/ext/erb/escape
+/Users/johnny/.rvm/rubies/ruby-3.3.0/bin/ruby extconf.rb
+checking for rb_ext_ractor_safe() in ruby.h... yes
+creating Makefile
+
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/erb-5.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20251003-2095-c9fpgx sitelibdir\=./.gem.20251003-2095-c9fpgx clean
+
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/erb-5.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20251003-2095-c9fpgx sitelibdir\=./.gem.20251003-2095-c9fpgx
+compiling escape.c
+linking shared-object erb/escape.bundle
+
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/erb-5.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20251003-2095-c9fpgx sitelibdir\=./.gem.20251003-2095-c9fpgx install
+/usr/local/bin/ginstall -c -m 0755 escape.bundle ./.gem.20251003-2095-c9fpgx/erb
+
+current directory: /Users/johnny/private/notion_forge/vendor/bundle/ruby/3.3.0/gems/erb-5.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20251003-2095-c9fpgx sitelibdir\=./.gem.20251003-2095-c9fpgx clean
