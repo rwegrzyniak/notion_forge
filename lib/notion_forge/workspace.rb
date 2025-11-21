@@ -65,6 +65,29 @@ module NotionForge
       }
     end
 
+    # Main validation API method for SaaS - returns JSON-serializable hash
+    def self.validate(dsl_code)
+      validator = Validation::WorkspaceValidator.new(dsl_code)
+      validator.validation_report
+    end
+
+    def validate_before_deploy
+      validator = Validation::WorkspaceValidator.new(self)
+      validator.validate
+      validator
+    end
+
+    def valid_for_deployment?
+      validate_before_deploy.valid?
+    end
+
+    # Class method for validating DSL code
+    def self.validate_dsl(dsl_code)
+      validator = Validation::DslValidator.new(dsl_code)
+      validator.validate
+      validator
+    end
+
     # Safe building strategies
     def forge!(mode: :update)
       puts "🔥 Forging workspace: #{root.title}"

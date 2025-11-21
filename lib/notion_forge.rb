@@ -20,6 +20,7 @@ require_relative "notion_forge/builders"
 require_relative "notion_forge/resource_collection"
 require_relative "notion_forge/drift_checker"
 require_relative "notion_forge/dsl"
+require_relative "notion_forge/validation"
 
 # NotionForge - Infrastructure as Code for Notion
 # Modern Ruby Edition with ALL the sexy features

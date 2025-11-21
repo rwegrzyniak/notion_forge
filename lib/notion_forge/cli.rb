@@ -523,7 +523,121 @@ module NotionForge
       say("  notion_forge check <workspace_name>    # Check for drift")
     end
 
+    # Validation command
+    desc "validate DSL_FILE", "Validate a NotionForge DSL file"
+    long_desc <<~DESC
+      🔍 Validate NotionForge DSL Code
+
+      This command validates your NotionForge DSL code for:
+      • Syntax errors and Ruby code issues
+      • DSL structure and required methods
+      • Property usage and Notion API compatibility
+      • Missing dependencies and method availability
+      • Best practices and common issues
+
+      Returns detailed error messages and suggested fixes.
+
+      Examples:
+        notion_forge validate my_workspace.rb
+        notion_forge validate --json my_workspace.rb    # JSON output
+        notion_forge validate --strict my_workspace.rb  # Treat warnings as errors
+    DESC
+    option :json, type: :boolean, default: false, desc: "Output results as JSON"
+    option :strict, type: :boolean, default: false, desc: "Treat warnings as errors"
+    option :output, aliases: ["-o"], type: :string, desc: "Output file for results"
+    def validate(dsl_file)
+      unless File.exist?(dsl_file)
+        say "❌ File not found: #{dsl_file}", :red
+        exit 1
+      end
+
+      say "🔍 Validating DSL file: #{dsl_file}", :blue
+      
+      begin
+        dsl_code = File.read(dsl_file)
+        result = NotionForge::Workspace.validate(dsl_code)
+        
+        if options[:json]
+          output_validation_json(result)
+        else
+          output_validation_human(result)
+        end
+        
+        # Write to output file if specified
+        if options[:output]
+          File.write(options[:output], result.to_json)
+          say "📄 Results written to: #{options[:output]}", :green
+        end
+        
+        # Exit with error code if validation failed
+        if result[:status] == 'invalid' || (options[:strict] && result[:has_warnings])
+          exit 1
+        end
+        
+      rescue => e
+        say "❌ Error reading or validating file: #{e.message}", :red
+        exit 1
+      end
+    end
+
     private
+
+    def output_validation_json(result)
+      puts JSON.pretty_generate(result)
+    end
+
+    def output_validation_human(result)
+      case result[:status]
+      when 'valid'
+        say "✅ DSL file is valid!", :green
+        
+        if result[:has_warnings]
+          say "\n⚠️  Warnings found:", :yellow
+          result[:warnings].each do |warning|
+            say "  • #{warning[:message]}", :yellow
+            say "    Fix: #{warning[:fix]}", :cyan if warning[:fix]
+          end
+        else
+          say "🎉 No issues found - ready for deployment!", :green
+        end
+        
+      when 'invalid'
+        say "❌ DSL file has validation errors:", :red
+        
+        result[:errors].each do |error|
+          say "\n🚨 #{error[:code].upcase}", :red
+          say "   #{error[:message]}", :white
+          if error[:fix]
+            say "   💡 Fix: #{error[:fix]}", :cyan
+          end
+          if error[:line]
+            say "   📍 Line: #{error[:line]}", :yellow
+          end
+        end
+        
+        if result[:warnings].any?
+          say "\n⚠️  Additional warnings:", :yellow
+          result[:warnings].each do |warning|
+            say "  • #{warning[:message]}", :yellow
+            say "    Fix: #{warning[:fix]}", :cyan if warning[:fix]
+          end
+        end
+      end
+      
+      # Summary
+      say "\n📊 Validation Summary:", :blue
+      say "   Total Errors: #{result[:summary][:total_errors]}", :white
+      say "   Total Warnings: #{result[:summary][:total_warnings]}", :white
+      say "   Critical Issues: #{result[:summary][:critical_issues]}", :white
+      
+      if result[:summary][:total_errors] == 0 && result[:summary][:total_warnings] == 0
+        say "\n🚀 Ready for deployment with notion_forge forge!", :green
+      elsif result[:summary][:total_errors] == 0
+        say "\n✅ Deployable, but consider addressing warnings", :yellow
+      else
+        say "\n🛑 Fix errors before deployment", :red
+      end
+    end
 
     # Configuration management
     def config_dir
